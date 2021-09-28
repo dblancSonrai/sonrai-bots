@@ -1,11 +1,10 @@
 {
-     "if": {
-      {
-       "field": "tags['CostCenter']",
-       "exists": "false"
+      "if": {
+        "field": "tags['CostCenter']",
+        "exists": "false"
+      },
+      "then": {
+        "effect": "deny"
       }
-     },
-     "then": {
-       "effect": "deny"
-     }
-}
+    }
+  }
