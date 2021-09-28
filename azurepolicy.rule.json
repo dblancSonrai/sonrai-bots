@@ -1,9 +1,9 @@
 {
      "if": {
-         {
-           "field": "tags['CostCenter']",
-           "exists": "false"
-         }
+      {
+       "field": "tags['CostCenter']",
+       "exists": "false"
+      }
      },
      "then": {
        "effect": "deny"
