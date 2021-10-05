@@ -1,11 +1,16 @@
 {
-      "if": {
-        "field": "tags['Department']",
-        "exists": "false"
-      },
-      "then": {
+    "if": {
+        "allOf": [{
+                "value": "[resourceGroup().name]",
+                "like": "NAF_IT_Shared_Services"
+            },
+            {
+                "field": "tags['Department']",
+                "exists": "false"
+            }
+        ]
+    },
+    "then": {
         "effect": "deny"
-      }
     }
-  }
-NAF_IT_Shared_Services
+}
