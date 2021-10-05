@@ -1,0 +1,10 @@
+{
+      "if": {
+        "field": "location",
+        "notEquals": "westus"
+      },
+      "then": {
+        "effect": "deny"
+      }
+    }
+  }
