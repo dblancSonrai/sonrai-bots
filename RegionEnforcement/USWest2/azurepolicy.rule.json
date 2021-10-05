@@ -1,10 +1,16 @@
 {
-      "if": {
-        "field": "location",
-        "notEquals": "westus2"
-      },
-      "then": {
+    "if": {
+        "allOf": [{
+                "value": "[resourceGroup().name]",
+                "like": "NAF_IT_Shared_Services"
+            },
+            {
+                "field": "location",
+                "notEquals": "westus2"
+            }
+        ]
+    },
+    "then": {
         "effect": "deny"
-      }
     }
-  }
+}
