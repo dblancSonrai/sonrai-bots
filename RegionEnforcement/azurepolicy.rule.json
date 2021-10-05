@@ -1,10 +1,7 @@
-"if": {
-        "allOf": [
-          {
-            "field": "location",
-            "notEquals": "global"
-          }
-        ]
+{
+      "if": {
+        "field": "location",
+        "notEquals": "false"
       },
       "then": {
         "effect": "deny"
