@@ -2,7 +2,7 @@
 version: 2021-09-28
 type: Prevention
 title: Restrict resource deployment to region
-description: This Policy ensures that all resources being created have to be created in the   region
+description: This Policy ensures that all resources being created have to be created in the westus2 region
 cloud: Azure
 operation: ATTACH_AZURE_POLICY
 authorName: Sonrai Security
