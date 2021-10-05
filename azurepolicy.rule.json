@@ -1,6 +1,6 @@
 {
       "if": {
-        "field": "tags['CostCenter']",
+        "field": "tags['Department']",
         "exists": "false"
       },
       "then": {
