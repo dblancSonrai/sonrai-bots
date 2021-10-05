@@ -1,7 +1,7 @@
 # Built-in Sonrai Bot: srn:supersonrai::bot/c924f10a-4213-49ea-a0f9-35ef48fd97e5
 version: 2021-09-28
 type: Prevention
-title: Restrict resource deployment to region
+title: Restrict Resource Deployment to Specific Region
 description: This Policy ensures that all resources being created have to be created in the westus2 region
 cloud: Azure
 operation: ATTACH_AZURE_POLICY
