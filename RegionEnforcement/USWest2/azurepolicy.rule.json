@@ -1,7 +1,7 @@
 {
       "if": {
         "field": "location",
-        "notEquals": "westus"
+        "notEquals": "westus2"
       },
       "then": {
         "effect": "deny"
