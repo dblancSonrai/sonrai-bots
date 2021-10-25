@@ -1,11 +1,11 @@
 {
-"if": {
-    "anyOf": [
-      {
-        "allOf": [
-          {
-            "value": "[resourceGroup().name]",
-            "like": "Brixton-app"
+    "if": {
+        "anyOf": [
+            {
+                "allOf": [
+                {
+                "value": "[resourceGroup().name]",
+                "like": "Brixton-app"
           },
           {
             "field": "location",
