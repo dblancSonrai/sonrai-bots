@@ -1,29 +1,26 @@
 {
     "if": {
-        "anyOf": [
-            {
-                "allOf": [
-                {
-                "value": "[resourceGroup().name]",
-                "like": "Brixton-app"
-          },
-          {
-            "field": "location",
-            "notEquals": "westus"
-          }
-        ]
+        "anyOf": [{
+            "allOf": [{
+                    "value": "[resourceGroup().name]",
+                    "like": "Brixton-app"
+              },
+              {
+                    "field": "location",
+                    "notEquals": "westus"
+              }
+          ]
       },
       {
-        "allOf": [
-          {
-            "value": "[resourceGroup().name]",
-            "like": "NetworkWatcherRG"
-          },
-          {
-            "field": "location",
-            "notEquals": "westus"
-          }
-        ]
+        "allOf": [{
+                    "value": "[resourceGroup().name]",
+                    "like": "NetworkWatcherRG"
+              },
+              {
+                    "field": "location",
+                    "notEquals": "westus"
+              }
+          ]
       },
       "then": {
         "effect": "deny"
