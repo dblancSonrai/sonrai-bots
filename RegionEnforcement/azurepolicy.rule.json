@@ -1,5 +1,5 @@
 {
-  "if": {
+"if": {
     "anyOf": [
       {
         "allOf": [
@@ -28,3 +28,4 @@
       "then": {
         "effect": "deny"
       }
+}
