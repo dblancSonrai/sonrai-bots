@@ -1,8 +1,23 @@
 {
       "if": {
-        "field": "tags['Environment']",
-        "exists": "false"
-      },
+        "anyOf": [{
+            "field": "tags['Environment']",
+            "exists": "false"
+          },
+          {
+            "field": "tags['Department']",
+            "exists": "false"
+          },
+          {
+            "field": "tags['Project']",
+            "exists": "false"
+          },
+          {
+            "field": "tags['Owner']",
+            "exists": "false"
+          }
+        ]
+      },    
       "then": {
       "effect": "append",
       "details": [
