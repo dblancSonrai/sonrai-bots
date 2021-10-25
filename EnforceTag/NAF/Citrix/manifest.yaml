@@ -1,9 +1,0 @@
-# Built-in Sonrai Bot: srn:supersonrai::bot/c924f10a-4213-49ea-a0f9-35ef48fd97e4
-version: 2021-09-28
-type: Prevention
-title: Append 4 tags to all new and edited resources
-description: This Policy ensures new resources have the Department, Project, Owner and Environment tags
-cloud: Azure
-operation: ATTACH_AZURE_POLICY
-authorName: Sonrai Security
-authorEmail: info@sonraisecurity.com
