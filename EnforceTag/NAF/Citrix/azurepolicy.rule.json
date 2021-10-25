@@ -23,19 +23,19 @@
       "details": [
         {
           "field": "tags['Environment']",
-          "value": "[parameters('tagValue1')]"
+          "equals": "Prod"
         },
         {
           "field": "tags['Department']",
-          "value": "[parameters('tagValue2')]"
+          "equals": "Technology Services"
         },
         {
           "field": "tags['Project']",
-          "value": "[parameters('tagValue3')]"
+          "equals": "Citrix"
         },
         {
           "field": "tags['Owner']",
-          "value": "[parameters('tagValue4')]"
+          "equals": "Jeff Farinich"
         }
       ]
     }
