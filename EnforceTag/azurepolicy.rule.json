@@ -1,16 +1,109 @@
 {
     "if": {
-        "allOf": [{
-                "value": "[resourceGroup().name]",
-                "like": "NAF_IT_Shared_Services"
-            },
-            {
-                "field": "tags['Department']",
-                "exists": "false"
-            }
-        ]
+      "anyOf": [
+        {
+          "field": "tags['Environment']",
+          "exists": "false"
+        },
+        {
+          "field": "tags['Department']",
+          "exists": "false"
+        },
+        {
+          "field": "tags['Project']",
+          "exists": "false"
+        },
+        {
+          "field": "tags['Owner']",
+          "exists": "false"
+        }
+      ]
     },
     "then": {
-        "effect": "deny"
+      "effect": "append",
+      "details": [
+        {
+          "field": "[concat('tags[', parameters('tagName1'), ']')]",
+          "value": "[parameters('tagValue1')]"
+        },
+        {
+          "field": "[concat('tags[', parameters('tagName2'), ']')]",
+          "value": "[parameters('tagValue2')]"
+        },
+        {
+          "field": "[concat('tags[', parameters('tagName3'), ']')]",
+          "value": "[parameters('tagValue3')]"
+        },
+        {
+          "field": "[concat('tags[', parameters('tagName4'), ']')]",
+          "value": "[parameters('tagValue4')]"
+        }
+      ]
     }
-}
+  },
+  "parameters": {
+    "tagName1": {
+      "type": "String",
+      "metadata": {
+        "displayName": "Tag Name1",
+        "description": "Environment"
+      },
+      "defaultValue": "Environment"
+    },
+    "tagValue1": {
+      "type": "String",
+      "metadata": {
+        "displayName": "Tag Value1",
+        "description": "Environment for resources in this subscription"
+      },
+      "defaultValue": "Prod"
+    },
+    "tagName2": {
+      "type": "String",
+      "metadata": {
+        "displayName": "Tag Name2",
+        "description": "Department"
+      },
+      "defaultValue": "Department"
+    },
+    "tagValue2": {
+      "type": "String",
+      "metadata": {
+        "displayName": "Tag Value2",
+        "description": "Department responsible for this resource"
+      },
+      "defaultValue": "Technology Services"
+    },
+    "tagName3": {
+      "type": "String",
+      "metadata": {
+        "displayName": "Tag Name3",
+        "description": "Project"
+      },
+      "defaultValue": "Project"
+    },
+    "tagValue3": {
+      "type": "String",
+      "metadata": {
+        "displayName": "Tag Value3",
+        "description": "Team responsible for this resource"
+      },
+      "defaultValue": "Citrix"
+    },
+    "tagName4": {
+      "type": "String",
+      "metadata": {
+        "displayName": "Tag Name4",
+        "description": "Owner"
+      },
+      "defaultValue": "Owner"
+    },
+    "tagValue4": {
+      "type": "String",
+      "metadata": {
+        "displayName": "Tag Value4",
+        "description": "Person responsible for this resource"
+      },
+      "defaultValue": "Jeff Farinich"
+    }
+  }
