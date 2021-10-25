@@ -25,4 +25,5 @@
       "then": {
         "effect": "deny"
       }
+   }
 }
