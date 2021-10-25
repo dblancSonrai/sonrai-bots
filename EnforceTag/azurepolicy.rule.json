@@ -1,4 +1,6 @@
 {
+  "mode": "Indexed",
+  "policyRule": {
     "if": {
       "anyOf": [
         {
@@ -107,3 +109,4 @@
       "defaultValue": "Jeff Farinich"
     }
   }
+}
