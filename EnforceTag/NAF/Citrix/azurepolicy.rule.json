@@ -1,0 +1,27 @@
+{
+      "if": {
+        "field": "tags['Environment']",
+        "exists": "false"
+      },
+      "then": {
+      "effect": "append",
+      "details": [
+        {
+          "field": "tags['Environment']",
+          "value": "[parameters('tagValue1')]"
+        },
+        {
+          "field": "tags['Department']",
+          "value": "[parameters('tagValue2')]"
+        },
+        {
+          "field": "tags['Project']",
+          "value": "[parameters('tagValue3')]"
+        },
+        {
+          "field": "tags['Owner']",
+          "value": "[parameters('tagValue4')]"
+        }
+      ]
+    }
+  }
