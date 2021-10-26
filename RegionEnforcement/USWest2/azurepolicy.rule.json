@@ -54,10 +54,11 @@
                     "notEquals": "westus2"
               }
             ]
-          },
+          }
         ]
       },
       "then": {
         "effect": "deny"
       }
+	}
 }
