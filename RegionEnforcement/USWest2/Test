@@ -36,17 +36,6 @@
       {
         "allOf": [{
                     "value": "[resourceGroup().name]",
-                    "like": "bcaocr-infra-rg"
-              },
-              {
-                    "field": "location",
-                    "notEquals": "westus2"
-              }
-          ]
-      },
-      {
-        "allOf": [{
-                    "value": "[resourceGroup().name]",
                     "like": "bcaocrdqm-mrg"
               },
               {
