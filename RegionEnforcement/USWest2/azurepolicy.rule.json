@@ -1,16 +1,63 @@
 {
     "if": {
+        "anyOf": [{
+            "allOf": [{
+                    "value": "[resourceGroup().name]",
+                    "like": "NAF_IT_Shared_Services"
+              },
+              {
+                    "field": "location",
+                    "notEquals": "westus2"
+              }
+          ]
+      },
+      {
         "allOf": [{
-                "value": "[resourceGroup().name]",
-                "like": "NAF_IT_Shared_Services"
-            },
-            {
-                "field": "location",
-                "notEquals": "westus2"
-            }
+                    "value": "[resourceGroup().name]",
+                    "like": "bcaocr-apps-rg"
+              },
+              {
+                    "field": "location",
+                    "notEquals": "westus2"
+              }
+          ]
+      },
+      {
+        "allOf": [{
+                    "value": "[resourceGroup().name]",
+                    "like": "bcaocr-data-rg"
+              },
+              {
+                    "field": "location",
+                    "notEquals": "westus2"
+             }
+          ]
+      },
+      {
+        "allOf": [{
+                    "value": "[resourceGroup().name]",
+                    "like": "bcaocrdqm-mrg"
+              },
+              {
+                    "field": "location",
+                    "notEquals": "westus2"
+              }
+          ]
+      },
+      {
+        "allOf": [{
+                    "value": "[resourceGroup().name]",
+                    "like": "MC_bcaocrdqm-mrg_dmp-cluster-mgdfdhcjh7jnk_westus2"
+              },
+              {
+                    "field": "location",
+                    "notEquals": "westus2"
+              }
+            ]
+          },
         ]
-    },
-    "then": {
+      },
+      "then": {
         "effect": "deny"
-    }
+      }
 }
