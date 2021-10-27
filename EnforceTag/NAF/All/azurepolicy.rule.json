@@ -1,6 +1,6 @@
 {
     "if": {
-        "allOf": [{
+        "anyOf": [{
                 "field": "tags['Owner']",
                 "exists": "false"
             },
