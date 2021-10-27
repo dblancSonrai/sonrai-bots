@@ -1,17 +1,16 @@
 {
-  "if": {
-    "anyOf": [
-      {
-        "field": "tags['Owner']",
-        "exists": "false"
-      },
-      {
-        "field": "tags['Department']",
-        "exists": "false"
-      }
-    ]
-  },
-  "then": {
-    "effect": "deny"
-  }
+    "if": {
+        "anyOf": [{
+                "field": "tags['Owner']",
+                "exists": "false"
+            },
+            {
+                "field": "tags['Department']",
+                "exists": "false"
+            }
+        ]
+    },
+    "then": {
+        "effect": "deny"
+    }
 }
