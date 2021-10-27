@@ -1,9 +1,9 @@
 {
   "if": {
-    "allOf": [
+    "anyOf": [
       {
-        "value": "[resourceGroup().name]",
-        "like": "NAF_IT_Shared_Services"
+        "field": "tags['Owner']",
+        "exists": "false"
       },
       {
         "field": "tags['Department']",
