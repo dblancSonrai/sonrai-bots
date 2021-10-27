@@ -1,7 +1,11 @@
 {
     "if": {
-        "anyOf": [{
+        "allOf": [{
                 "field": "tags['Owner']",
+                "exists": "false"
+            },
+            {
+                "field": "tags['Department']",
                 "exists": "false"
             }
         ]
