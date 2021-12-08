@@ -1,7 +1,7 @@
 "if": {
-        "allOf": [
-          {
-            "anyOf": [
+    "allOf": [
+      {
+        "anyOf": [
               {
                 "field": "tags['Department']",
                 "exists": "false"
@@ -21,5 +21,3 @@
       "then": {
         "effect": "deny"
       }
-    }
-}
