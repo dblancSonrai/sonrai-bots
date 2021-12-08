@@ -1,20 +1,21 @@
 {
     "if": {
-        "anyOf": [{
-                "field": "tags['Owner']",
-                "exists": "false"
-            },
-            {
-                "field": "tags['Department']",
-                "exists": "false"
-            },
-            {      
+        "allOf": [{
                 "field": "type",
                 "equals": "Microsoft.Resources/subscriptions/resourceGroups"
-            }
-        ]
-    },
-    "then": {
-        "effect": "deny"
-    }
+          },
+                "anyof": [{
+                        "field": "tags['Department']",
+                        "exists": "false"
+                    },
+                    {      
+                        "field": "tags['Owner']",
+                        "exists": "false"
+                    }
+                ]
+            ]
+        },
+        "then": {
+            "effect": "deny"
+        }
 }
