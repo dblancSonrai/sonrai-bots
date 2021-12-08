@@ -4,18 +4,18 @@
                 "field": "type",
                 "equals": "Microsoft.Resources/subscriptions/resourceGroups"
           },
-                "anyof": [{
-                        "field": "tags['Department']",
-                        "exists": "false"
-                    },
-                    {      
-                        "field": "tags['Owner']",
-                        "exists": "false"
-                    }
-                ]
+            "anyof": [{
+                    "field": "tags['Department']",
+                    "exists": "false"
+                },
+                {      
+                    "field": "tags['Owner']",
+                    "exists": "false"
+                }
             ]
-        },
-        "then": {
-            "effect": "deny"
-        }
+        ]
+    },
+    "then": {
+        "effect": "deny"
+    }
 }
