@@ -1,1 +1,9 @@
-testing
+# Built-in Sonrai Bot: srn:supersonrai::bot/c924f10a-4213-49ea-a0f9-35ef48fd97e5
+version: 2021-09-28
+type: Prevention
+title: Ensure tag 'Department' and 'Owner' is present on any resource group
+description: This Policy ensures that all resource groups being created have the tag 'Department' and 'Owner' attached
+cloud: Azure
+operation: ATTACH_AZURE_POLICY
+authorName: Sonrai Security
+authorEmail: info@sonraisecurity.com
