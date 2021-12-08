@@ -8,11 +8,9 @@
                 "field": "tags['Department']",
                 "exists": "false"
             },
+            {      
                 "field": "type",
-                "in": [
-                    "Microsoft.ClassicCompute/virtualMachines",
-                    "Microsoft.Compute/virtualMachines"
-                ]
+                "equals": "Microsoft.Resources/subscriptions/resourceGroups"
             }
         ]
     },
