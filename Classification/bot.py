@@ -9,7 +9,7 @@ def run(ctx):
 
     # options used in creating the data classification jobs
     outputMode = "FINGERPRINT" # FINGERPRINT or OBJECT
-    includeSamples = "true" # true or false
+    includeSamples = "false" # true or false
     scanMode = "FULL_SCAN" # FULL_SCAN, PARTIAL_SCAN or QUICK_SCAN
     classifiers = " BANKACCOUNTNUMBER, CREDITCARD, DOB, DRIVERSLICENSE, FULLNAME, SSN, ZIPCODE "
     encryptionEnabled = "false" # true or false
