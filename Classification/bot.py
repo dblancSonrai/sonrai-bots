@@ -28,6 +28,7 @@ def run(ctx):
                     ' scanMode: '  + scanMode +
                     ' classifiers:  [ ' + classifiers + ' ]' +
                     ' encryptionEnabled: ' + encryptionEnabled +
+                    ' customClassifierSrns: []' +
                     ' hashingEnabled:false' +
                     ' hashingType:null' +
                     ' saltKeyvaultName:null' +
