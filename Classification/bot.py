@@ -11,7 +11,7 @@ def run(ctx):
     outputMode = "FINGERPRINT" # FINGERPRINT or OBJECT
     includeSamples = "true" # true or false
     scanMode = "FULL_SCAN" # FULL_SCAN, PARTIAL_SCAN or QUICK_SCAN
-    classifiers = " ADDRESS, BANKACCOUNTNUMBER, CREDITCARD, DOB, DRIVERSLICENSE, EMAIL, FULLNAME, PASSPORTNUMBER, PHONENUMBER, POSTCODE, SIN, SSN, TAXNUMBER, ZIPCODE "
+    classifiers = " BANKACCOUNTNUMBER, CREDITCARD, DOB, DRIVERSLICENSE, FULLNAME, SSN, ZIPCODE "
     encryptionEnabled = "false" # true or false
     # comment out next line if encryptionEnabled is false
     # public key needs to have carriage returns removed and replaced with \\n
