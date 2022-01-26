@@ -28,10 +28,10 @@ def run(ctx):
                     ' scanMode: '  + scanMode +
                     ' classifiers:  [ ' + classifiers + ' ]' +
                     ' encryptionEnabled: ' + encryptionEnabled +
-                    ' hashingEnabled:false ' +
-                    ' hashingType:null ' +
-                    ' saltKeyvaultName:null ' +
-                    ' saltKeyvaultPath:null '
+                    ' hashingEnabled:false' +
+                    ' hashingType:null' +
+                    ' saltKeyvaultName:null' +
+                    ' saltKeyvaultPath:null'
                     
               )
 
