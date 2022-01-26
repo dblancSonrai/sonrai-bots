@@ -1,3 +1,4 @@
+
 import logging
 
 def run(ctx):
@@ -27,7 +28,12 @@ def run(ctx):
                     ' includeSamples: ' + includeSamples +
                     ' scanMode: '  + scanMode +
                     ' classifiers:  [ ' + classifiers + ' ]' +
-                    ' encryptionEnabled: ' + encryptionEnabled
+                    ' encryptionEnabled: ' + encryptionEnabled +
+                    ' hashingEnabled:false ' +
+                    ' hashingType:null ' +
+                    ' saltKeyvaultName:null ' +
+                    ' saltKeyvaultPath:null '
+                    
               )
 
     if 'publicKey' in locals():
