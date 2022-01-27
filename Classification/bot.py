@@ -8,11 +8,11 @@ def run(ctx):
     graphql_client = ctx.graphql_client()
 
     # options used in creating the data classification jobs
-    #outputMode = FINGERPRINT # FINGERPRINT or OBJECT
-    #includeSamples = false # true or false
-    #scanMode = FULL_SCAN # FULL_SCAN, PARTIAL_SCAN or QUICK_SCAN
-    #classifiers = BANKACCOUNTNUMBER, CREDITCARD, DOB, DRIVERSLICENSE, FULLNAME, SSN, ZIPCODE
-    #encryptionEnabled = false # true or false
+    outputMode = "FINGERPRINT" # FINGERPRINT or OBJECT
+    includeSamples = "false" # true or false
+    scanMode = "FULL_SCAN" # FULL_SCAN, PARTIAL_SCAN or QUICK_SCAN
+    classifiers = " BANKACCOUNTNUMBER, CREDITCARD, DOB, DRIVERSLICENSE, FULLNAME, SSN, ZIPCODE "
+    encryptionEnabled = "false" # true or false
     # comment out next line if encryptionEnabled is false
     # public key needs to have carriage returns removed and replaced with \\n
     #publicKey ="-----BEGIN PUBLIC KEY-----\\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA5//KZA2xGUfTV8ohNOAj\\ny6ovDomGqL8Hq5g91vaLs9HfVIR8lrviP9S30y9KWPVWZ/3LWxLzN2uz8OSfK0JS\\nYiCCGdsYa3WppsSlSgMiI9uhDXJpgyBKNoKQcyZR67Bpbtj7/lR4kT6S3kNbIDNf\\nzO/dG4G9MGmdEE0A2wUgCKLHIMH7IoL4dfaSYW4eNcW+uxwX/pnUHWtLAlUFUel1\\np/LDUhjzEuQfw7MfLGHos6h54R+MaY+6OBd+NL6LKswlDwatMK+iu7BLTz3NP6GP\\nZ53n7yKrEs8vHmmTPRTqdEq+EtTtuKmF36j9NJm/t+krhhCqcAuGtyJT2FaBP5kE\\nsQIDAQAB\\n-----END PUBLIC KEY-----"
@@ -23,12 +23,11 @@ def run(ctx):
                  ' enabled:true' +
                  ' targetSrn: "' + object_srn + '" ' +
                  ' jobInfo: {' +
-                    ' outputMode: FINGERPRINT' +
-                    ' includeSamples: false' +
-                    ' scanMode: FULL_SCAN' +
-                    ' classifiers:  [ BANKACCOUNTNUMBER, CREDITCARD, DOB, DRIVERSLICENSE, FULLNAME, SSN, ZIPCODE ]' +
-                    ' encryptionEnabled: false' +
-                    ' customClassifierSrns: []' +
+                    ' outputMode: '  + outputMode +
+                    ' includeSamples: ' + includeSamples +
+                    ' scanMode: '  + scanMode +
+                    ' classifiers:  [ ' + classifiers + ' ]' +
+                    ' encryptionEnabled: ' + encryptionEnable +
                     ' hashingEnabled:false' +
                     ' hashingType:null' +
                     ' saltKeyvaultName:null' +
