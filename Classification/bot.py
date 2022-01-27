@@ -12,7 +12,7 @@ def run(ctx):
     includeSamples = "false" # true or false
     scanMode = "FULL_SCAN" # FULL_SCAN, PARTIAL_SCAN or QUICK_SCAN
     classifiers = " ADDRESS, BANKACCOUNTNUMBER, CREDITCARD, DOB, EMAIL, FULLNAME, PHONENUMBER, SSN, ZIPCODE "
-    #customClassifier = " srn:nafinc::SonraiCustomClassifier/98bd3526-e7c2-455c-9e59-eb4cc6113d1c, srn:nafinc::SonraiCustomClassifier/1506d679-c5e3-4a26-820d-01be122df6b2, srn:nafinc::SonraiCustomClassifier/fd6c9a47-f28c-43b8-b67e-4f5f81fcbe38, srn:nafinc::SonraiCustomClassifier/253d55ab-ff98-4bba-b685-f9029578d1d9, srn:nafinc::SonraiCustomClassifier/c8d599d3-8683-4d9a-ac24-ab0d6728c470, srn:nafinc::SonraiCustomClassifier/3c6a8caf-1f11-4dd2-8860-5b007127e4d2, srn:nafinc::SonraiCustomClassifier/28b654db-bb5c-4b50-a43d-7e7f5ff7800a "
+    customClassifier = " srn:nafinc::SonraiCustomClassifier/98bd3526-e7c2-455c-9e59-eb4cc6113d1c, srn:nafinc::SonraiCustomClassifier/1506d679-c5e3-4a26-820d-01be122df6b2, srn:nafinc::SonraiCustomClassifier/fd6c9a47-f28c-43b8-b67e-4f5f81fcbe38, srn:nafinc::SonraiCustomClassifier/253d55ab-ff98-4bba-b685-f9029578d1d9, srn:nafinc::SonraiCustomClassifier/c8d599d3-8683-4d9a-ac24-ab0d6728c470, srn:nafinc::SonraiCustomClassifier/3c6a8caf-1f11-4dd2-8860-5b007127e4d2, srn:nafinc::SonraiCustomClassifier/28b654db-bb5c-4b50-a43d-7e7f5ff7800a "
     encryptionEnabled = "false" # true or false
     # comment out next line if encryptionEnabled is false
     # public key needs to have carriage returns removed and replaced with \\n
@@ -29,7 +29,7 @@ def run(ctx):
                     ' scanMode: ' + scanMode +
                     ' classifiers: [ ' + classifiers + ' ]' +
                     ' encryptionEnabled: ' + encryptionEnabled +
-                    ' customClassifierSrns: [srn:nafinc::SonraiCustomClassifier/98bd3526-e7c2-455c-9e59-eb4cc6113d1c, srn:nafinc::SonraiCustomClassifier/1506d679-c5e3-4a26-820d-01be122df6b2, srn:nafinc::SonraiCustomClassifier/fd6c9a47-f28c-43b8-b67e-4f5f81fcbe38, srn:nafinc::SonraiCustomClassifier/253d55ab-ff98-4bba-b685-f9029578d1d9, srn:nafinc::SonraiCustomClassifier/c8d599d3-8683-4d9a-ac24-ab0d6728c470, srn:nafinc::SonraiCustomClassifier/3c6a8caf-1f11-4dd2-8860-5b007127e4d2, srn:nafinc::SonraiCustomClassifier/28b654db-bb5c-4b50-a43d-7e7f5ff7800a]' +
+                    ' customClassifierSrns: ' + customClassifier +
                     ' hashingEnabled:false' +
                     ' hashingType:null' +
                     ' saltKeyvaultName:null' +
