@@ -27,7 +27,7 @@ def run(ctx):
                     ' includeSamples: ' + includeSamples +
                     ' scanMode: ' + scanMode +
                     ' classifiers: [ ' + classifiers + ' ]' +
-                    ' encryptionEnabled: ' + encryptionEnable +
+                    ' encryptionEnabled: ' + encryptionEnabled +
                     ' hashingEnabled:false' +
                     ' hashingType:null' +
                     ' saltKeyvaultName:null' +
