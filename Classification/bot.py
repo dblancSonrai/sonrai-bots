@@ -23,10 +23,10 @@ def run(ctx):
                  ' enabled:true' +
                  ' targetSrn: "' + object_srn + '" ' +
                  ' jobInfo: {' +
-                    ' outputMode: '  + outputMode +
+                    ' outputMode: ' + outputMode +
                     ' includeSamples: ' + includeSamples +
-                    ' scanMode: '  + scanMode +
-                    ' classifiers:  [ ' + classifiers + ' ]' +
+                    ' scanMode: ' + scanMode +
+                    ' classifiers: [ ' + classifiers + ' ]' +
                     ' encryptionEnabled: ' + encryptionEnable +
                     ' hashingEnabled:false' +
                     ' hashingType:null' +
