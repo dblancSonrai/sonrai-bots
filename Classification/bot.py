@@ -6,7 +6,7 @@ def run(ctx):
 
     # Create GraphQL client
     graphql_client = ctx.graphql_client()
-
+    #why is it not updating
     # options used in creating the data classification jobs
     outputMode = "FINGERPRINT" # FINGERPRINT or OBJECT
     includeSamples = "false" # true or false
