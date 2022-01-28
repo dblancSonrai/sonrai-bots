@@ -3,7 +3,7 @@ title: "JIT: Azure Group Member Selector"
 
 # The next fields are optional:
 description: "This templates allows you to specify a group to add a user into"
-version: "0.0.2"
+version: "0.0.3"
 authorName: "Sonrai Security"
 authorEmail: "info@sonraisecurity.com"
 
