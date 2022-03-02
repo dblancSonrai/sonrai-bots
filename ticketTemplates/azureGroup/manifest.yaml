@@ -23,7 +23,7 @@ fields:
     type: "select"
     select:
       #search: "{ Groups (where: { type: { op:EQ, value: ActiveDirectoryGroup }}) { items { srn name } } }"
-      search: "{ Groups (where: {and: [{and: [{or: [{name: {op: CONTAINS, value: ".Owner", caseSensitive: false}}, {name: {op: CONTAINS, value: ".Contributor", caseSensitive: false}}]}, {type: {op: EQ, value: ActiveDirectoryGroup}}]}, {}]}) {items {srn name}}}"
+      search: "{ Groups (where: {and: [{and: [{or: [{name: {op: CONTAINS, value: ".Owner", caseSensitive: false}}, {name: {op: CONTAINS, value: ".Contributor", caseSensitive: false}}]}, {type: {op: EQ, value: ActiveDirectoryGroup}}]}, {}]}) { items { srn name } } }"
       path: ["data", "Groups", "items"]
       valueField: "srn"
       labelFields: ["name", "srn"]
