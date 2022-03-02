@@ -9,6 +9,15 @@ authorEmail: "info@sonraisecurity.com"
 
 # one or more fields must be specified
 fields:
+  - name: "Account"
+    required: true 
+    type: "select"
+    select:
+      search: "{ Accounts (where: {and: [{and: [{account: {op: IN_LIST, values: ["04986fa2-6d28-46f7-966a-b1ac32f74fa8"]}}, {active: {op: EQ, value: true}}]}, {}]}) { items { srn name} } }
+      path: ["data", "Accounts", "items"]
+      valueField: "srn"
+      labelFields: ["name", "srn"]
+      
   - name: "User select"
     required: true 
     type: "select"
@@ -22,8 +31,8 @@ fields:
     required: true 
     type: "select"
     select:
-      #search: "{ Groups (where: { type: { op:EQ, value: ActiveDirectoryGroup }}) { items (limit: 5000) { srn name } } }"
-      search: "{ Groups ( where: { and: [ { and: [ { or: [ { name: { op: ENDS_WITH, value: "Owner", caseSensitive: false } } , { name: { op: ENDS_WITH, value: "contributor", caseSensitive: false } } ] } , { type: { op: EQ, value: ActiveDirectoryGroup } } ] } , { } ] } ) { items { srn name } } }"
+      search: "{ Groups (where: { type: { op:EQ, value: ActiveDirectoryGroup }}) { items (limit: 5000) { srn name } } }"
+      #search: "{ Groups ( where: { and: [ { and: [ { or: [ { name: { op: ENDS_WITH, value: "Owner", caseSensitive: false } } , { name: { op: ENDS_WITH, value: "contributor", caseSensitive: false } } ] } , { type: { op: EQ, value: ActiveDirectoryGroup } } ] } , { } ] } ) { items { srn name } } }"
       path: ["data", "Groups", "items"]
       valueField: "srn"
       labelFields: ["name", "srn"]
