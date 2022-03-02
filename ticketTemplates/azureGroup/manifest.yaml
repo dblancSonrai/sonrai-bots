@@ -31,8 +31,8 @@ fields:
  
   - name: "Reopen ticket after bot remediation"
     required: true
-    type: "checkbox"
+    #type: "checkbox"
 
   - name: "Close ticket after bot remediation"
     required: true
-    type: "checkbox"
+    #type: "checkbox"
