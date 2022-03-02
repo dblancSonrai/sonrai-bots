@@ -22,7 +22,7 @@ fields:
     required: true 
     type: "select"
     select:
-      search: "{ Groups (where: { type: { op:EQ, value: ActiveDirectoryGroup }}) { items (limit: 5000) { srn name } } }"
+      search: "{ Groups (where: {type: {op:EQ, value: ActiveDirectoryGroup}}) { items (limit: 5000) { srn name } } }"
       #search: "{ Groups ( where: { and: [ { and: [ { or: [ { name: { op: ENDS_WITH, value: "Owner", caseSensitive: false } } , { name: { op: ENDS_WITH, value: "contributor", caseSensitive: false } } ] } , { type: { op: EQ, value: ActiveDirectoryGroup } } ] } , { } ] }, ), { items, { srn name } } }"
       path: ["data", "Groups", "items"]
       valueField: "srn"
