@@ -1,5 +1,5 @@
 # title of ticket template is required
-title: "JIT: Azure Group Member Selector TEST"
+title: "JIT: Azure Group Member Selector"
 
 # The next fields are optional:
 description: "This templates allows you to specify a group to add a user into"
