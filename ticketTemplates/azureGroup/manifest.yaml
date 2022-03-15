@@ -1,44 +1,44 @@
---- 
+title: 'JIT: Azure Group Member Selector'
+description: This templates allows you to specify a group to add a user into
+version: 0.0.3
+authorName: Sonrai Security
 authorEmail: info@sonraisecurity.com
-authorName: "Sonrai Security"
-description: "This templates allows you to specify a group to add a user into"
-fields: 
-  - 
-    name: "User select"
+fields:
+  - name: User select
     required: true
-    select: 
-      labelFields: 
-        - name
-        - srn
-      path: 
+    type: select
+    select:
+      search: >-
+        { Users (where: {type: {op: EQ, value: ActiveDirectoryUser}}) { items
+        (limit: 5000) { srn name } } }
+      path:
         - data
         - Users
         - items
-      search: "{ Users (where: {type: {op: EQ, value: ActiveDirectoryUser}}) { items (limit: 5000) { srn name } } }"
       valueField: srn
-    type: select
-  - 
-    name: "Group select"
-    required: true
-    select: 
-      labelFields: 
+      labelFields:
         - name
         - srn
-      path: 
+  - name: Group select
+    required: true
+    type: select
+    select:
+      search: >-
+        { Groups(where: {and: [{and: [{active: {op: EQ, value: true}}, {name:
+        {op: STARTS_WITH, value: "azure-jit", caseSensitive: false}}]}, {}]}) {
+        items { srn name } } }
+      path:
         - data
         - Groups
         - items
-      search: "{ Groups(where: {and: [{and: [{active: {op: EQ, value: true}}, {name: {op: STARTS_WITH, value: \"azure-jit\", caseSensitive: false}}]}, {}]}) { items { srn name } } }"
       valueField: srn
-    type: select
-  - 
+      labelFields:
+        - name
+        - srn
+  - name: Reopen ticket after bot remediation
+    required: true
+    type: checkbox
     defaultValue: true
-    name: "Reopen ticket after bot remediation"
+  - name: Close ticket after bot remediation
     required: true
     type: checkbox
-  - 
-    name: "Close ticket after bot remediation"
-    required: true
-    type: checkbox
-title: "JIT: Azure Group Member Selector"
-version: "0.0.3"
