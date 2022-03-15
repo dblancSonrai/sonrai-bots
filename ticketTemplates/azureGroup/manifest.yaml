@@ -1,43 +1,38 @@
-title: 'JIT: Azure Group Member Selector'
-description: This templates allows you to specify a group to add a user into
-version: 0.0.3
-authorName: Sonrai Security
-authorEmail: info@sonraisecurity.com
+# title of ticket template is required
+title: "JIT: Azure Group Member Selector"
+
+# The next fields are optional:
+description: "This templates allows you to specify a group to add a user into"
+version: "0.0.3"
+authorName: "Sonrai Security"
+authorEmail: "info@sonraisecurity.com"
+
+# one or more fields must be specified
 fields:
-  - name: User select
-    required: true
-    type: select
+  - name: "User select"
+    required: true 
+    type: "select"
     select:
-      search: >-
-        { Users (where: {type: {op: EQ, value: ActiveDirectoryUser}}) { items
-        (limit: 5000) { srn name } } }
-      path:
-        - data
-        - Users
-        - items
-      valueField: srn
-      labelFields:
-        - name
-        - srn
-  - name: Group select
-    required: true
-    type: select
+      search: "{ Users (where: {type: {op: EQ, value: ActiveDirectoryUser}}) { items (limit: 5000) { srn name } } }"
+      path: ["data", "Users", "items"]
+      valueField: "srn"
+      labelFields: ["name", "srn"]
+
+  - name: "Group select"
+    required: true 
+    type: "select"
     select:
-      search: >-
-        { Groups(where: {and: [{and: [{active: {op: EQ, value: true}}, {name:
-        {op: STARTS_WITH, value: "azure-jit", caseSensitive: false}}]}, {}]}) {
-        items { srn name } } }
-      path:
-        - data
-        - Groups
-        - items
-      valueField: srn
-      labelFields:
-        - name
-        - srn
-  - name: Reopen ticket after bot remediation
+      #search: "{ Groups (where: {type: {op:EQ, value: ActiveDirectoryGroup}}) { items (limit: 5000) { srn name } } }"
+      search: "{ Groups(where: {and: [{and: [{active: {op: EQ, value: true}}, {name: {op: STARTS_WITH, value: \"azure-jit\", caseSensitive: false}}]}, {}]}) { items { srn name } } }"
+      path: ["data", "Groups", "items"]
+      valueField: "srn"
+      labelFields: ["name", "srn"]
+      
+ 
+  - name: "Reopen ticket after bot remediation"
     required: true
-    type: checkbox
-  - name: Close ticket after bot remediation
+    type: "checkbox"
+
+  - name: "Close ticket after bot remediation"
     required: true
-    type: checkbox
+    type: "checkbox"
