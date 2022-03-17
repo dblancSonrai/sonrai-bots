@@ -26,9 +26,12 @@ fields:
       path: ["data", "Groups", "items"]
       valueField: "srn"
       labelFields: ["name", "srn"]
+      
+      
   #- name: "Reopen ticket after bot remediation"
   #  required: true
   #  type: "checkbox"
+  
   #- name: "Close ticket after bot remediation"
   #  required: true
   #  type: "checkbox"
