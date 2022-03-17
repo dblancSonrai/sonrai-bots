@@ -22,17 +22,13 @@ fields:
     required: true 
     type: "select"
     select:
-      #search: "{ Groups (where: {type: {op:EQ, value: ActiveDirectoryGroup}}) { items (limit: 5000) { srn name } } }"
       search: "{ Groups(where: {and: [{and: [{active: {op: EQ, value: true}}, {name: {op: STARTS_WITH, value: \"azure-jit\", caseSensitive: false}}]}, {}]}) { items { srn name } } }"
       path: ["data", "Groups", "items"]
       valueField: "srn"
       labelFields: ["name", "srn"]
-      
- 
   #- name: "Reopen ticket after bot remediation"
   #  required: true
   #  type: "checkbox"
-
   #- name: "Close ticket after bot remediation"
   #  required: true
   #  type: "checkbox"
