@@ -78,6 +78,7 @@ def run(ctx):
     )
     logging.info('Adding user {} to group {}'.format(userId, groupId))
     #graphrbac_client = ctx.get_client().get(GraphRbacManagementClient)
+    logging.info('TENANTID'.format(tenantId))
     graphrbac_client.groups.add_member(group_object_id=groupId, url='https://graph.windows.net/' + tenantId + '/directoryObjects/' + userId)
 
 
