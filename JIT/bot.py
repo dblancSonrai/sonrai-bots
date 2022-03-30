@@ -67,7 +67,8 @@ def run(ctx):
     credentials = ServicePrincipalCredentials(
         client_id="e8d1baad-8c71-48a6-a095-7fbbf45544df",
         secret="0E17Q~6WPeBTXJzMm.VpylCJe9oqdVP0YxE_q",
-        tenant="e9f18dc9-c8f5-4b52-9e8f-e30204f0ca2d"
+        tenant="e9f18dc9-c8f5-4b52-9e8f-e30204f0ca2d",
+        resource="https://graph.windows.net"
     )
 
     tenant_id = 'SonraiSecurityResearch.onmicrosoft.com'
