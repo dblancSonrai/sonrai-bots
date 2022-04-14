@@ -3,7 +3,6 @@ import sys
 import logging
 from azure.graphrbac import GraphRbacManagementClient
 from azure.graphrbac.models import GraphErrorException
-from azure.common.credentials import ServicePrincipalCredentials
 
 from sonrai.platform.azure.client import ManagedIdentityClient
 
@@ -13,7 +12,6 @@ def run(ctx):
     ticket = ctx.config.get('data').get('ticket')
 
     ticket_srn = ticket.get("srn")
-    #CHANGE BACK TO FALSE TO RESTORE NORMAL BEHAVIOR
     reopen_ticket = 'true'
     close_ticket = 'true'
     user_srn = None
@@ -46,7 +44,7 @@ def run(ctx):
 
     if a is None:
         logging.error('Could not parse User SRN {}'.format(user_srn))
-        sys.exit()
+        raise Exception('Could not parse User SRN {}'.format(user_srn))
 
     tenantId = a.group(1)
     userId = a.group(2)
@@ -57,28 +55,15 @@ def run(ctx):
     a = re.search(pattern, group_srn)
 
     if a is None:
-        logging.error('Could not parse Group SRN {}'.format(user_srn))
-        sys.exit()
+        logging.error('Could not parse Group SRN {}'.format(group_srn))
+        raise Exception('Could not parse Group SRN {}'.format(group_srn))
 
     groupId = a.group(1)
 
     # Get the client and call the API to add a member
     #
-    credentials = ServicePrincipalCredentials(
-        client_id="e8d1baad-8c71-48a6-a095-7fbbf45544df",
-        secret="0E17Q~6WPeBTXJzMm.VpylCJe9oqdVP0YxE_q",
-        tenant="e9f18dc9-c8f5-4b52-9e8f-e30204f0ca2d",
-        resource="https://graph.windows.net"
-    )
-
-    tenant_id = 'SonraiSecurityResearch.onmicrosoft.com'
-    
-    graphrbac_client = GraphRbacManagementClient(
-        credentials,
-        tenant_id
-    )
-    logging.info('Adding user {} to group {} in tenant {}'.format(userId, groupId, tenantId))
-    #graphrbac_client = ctx.get_client().get(GraphRbacManagementClient)
+    logging.info('Adding user {} to group {}'.format(userId, groupId))
+    graphrbac_client = ctx.get_client(audience="https://graph.windows.net/.default").get(GraphRbacManagementClient)
     graphrbac_client.groups.add_member(group_object_id=groupId, url='https://graph.windows.net/' + tenantId + '/directoryObjects/' + userId)
 
 
