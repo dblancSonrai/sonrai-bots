@@ -1,0 +1,9 @@
+# Built-in Sonrai Bot: srn:supersonrai::bot/0742ff71-c9e6-4993-94d7-10648dbea837
+version: 2022-09-15
+type: Remediation
+title: Enable CRM
+operation: EXECUTE_PYTHON_SCRIPT
+authorName: Sonrai Security
+authorEmail: info@sonraisecurity.com
+requiredPermissions: |-
+  No permissions needed
