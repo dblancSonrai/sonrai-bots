@@ -32,8 +32,9 @@ def run(ctx):
                   ' actionClassification: "' + ac + '" ' +
                   ' alertLevel: 5
                   )
-      graphql_client.query(mutationAction)
-      graphql_client.query(mutationAccess)
+      results = graphql_client.query(mutationAction)
+      results2 = graphql_client.query(mutationAccess)
+    #check to see if everything is good before running
     
     mutation = ( 'mutation CRM_GEO {' +
                 'setChangeDetectionProperties('+
