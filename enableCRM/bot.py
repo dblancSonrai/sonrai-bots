@@ -33,6 +33,3 @@ def run(ctx):
                 )
 
     graphql_client.query(mutation)
-
-    
-    
