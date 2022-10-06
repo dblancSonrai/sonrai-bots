@@ -17,7 +17,7 @@ def run(ctx):
                   'setChangeDetectionProperties('+
                   ' ResourceSrn: "' + object_srn + '" ' +
                   ' keyType: PATH' +
-                  ' keyName: "accessedBy" +
+                  ' keyName: accessedBy +
                   ' actionClassification: "' + ac + '" ' +
                   ' alertLevel: 5
                   )
@@ -28,7 +28,7 @@ def run(ctx):
                 'setChangeDetectionProperties('+
                 ' ResourceSrn: "' + object_srn + '" ' +
                 ' keyType: PATH' +
-                ' keyName: "accessedFrom" +
+                ' keyName: accessedFrom +
                 ' alertLevel: 5
                 )
 
