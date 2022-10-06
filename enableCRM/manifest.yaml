@@ -3,6 +3,7 @@ version: 2022-09-15
 type: Remediation
 title: Enable CRM
 operation: EXECUTE_PYTHON_SCRIPT
+cloud: Any
 authorName: Sonrai Security
 authorEmail: info@sonraisecurity.com
 requiredPermissions: |-
