@@ -18,7 +18,7 @@ def run(ctx):
                   ' ResourceSrn: "' + object_srn + '" ' +
                   ' keyType: PATH' +
                   ' keyName: "accessedBy" '+
-                  ' actionClassification: " + ac + " ' +
+                  ' actionClassification: "' + ac + '" ' +
                   ' alertLevel: 5'
                   )
       results = graphql_client.query(mutationAccess)
