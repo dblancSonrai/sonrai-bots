@@ -15,7 +15,7 @@ def run(ctx):
     for ac in action_class:
         mutationAccess = ( 'mutation CRM {' +
                   'setChangeDetectionProperties('+
-                  ' ResourceSrn: "' + object_srn + '" ' +
+                  ' resourceSrn: "' + object_srn + '" ' +
                   ' keyType: PATH' +
                   ' keyName: "accessedBy" '+
                   ' actionClassification:' + ac +
@@ -27,7 +27,7 @@ def run(ctx):
     
     mutation = ( 'mutation CRM_GEO {' +
                 'setChangeDetectionProperties('+
-                ' ResourceSrn: "' + object_srn + '" ' +
+                ' resourceSrn: "' + object_srn + '" ' +
                 ' keyType: PATH' +
                 ' keyName: "accessedFrom" '+
                 ' alertLevel: 5){resourceSrn}}'
