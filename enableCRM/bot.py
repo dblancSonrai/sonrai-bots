@@ -8,20 +8,20 @@ def run(ctx):
     graphql_client = ctx.graphql_client()
     
     #all different action classifications CRM will look for on changes to permissions
-    action_class = [DataRead, ProtectionRead, Create, DataCreate, Tag]
+    #action_class = [DataRead, ProtectionRead, Create, DataCreate, Tag]
   
     logging.info('Setting CRM for: {}'.format(object_srn))
     
-    for ac in action_class:
-      mutationAccess = ( 'mutation CRM {' +
+    #for ac in action_class:
+    mutationAccess = ( 'mutation CRM {' +
                   'setChangeDetectionProperties('+
                   ' ResourceSrn: "' + object_srn + '" ' +
                   ' keyType: PATH' +
                   ' keyName: "accessedBy" '+
-                  ' actionClassification: "' + ac + '" ' +
+                  ' actionClassification: "DataRead" ' +
                   ' alertLevel: 5'
                   )
-      results = graphql_client.query(mutationAccess)
+    results = graphql_client.query(mutationAccess)
     #check to see if everything is good before running
     
     mutation = ( 'mutation CRM_GEO {' +
