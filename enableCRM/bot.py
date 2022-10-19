@@ -19,17 +19,18 @@ def run(ctx):
                   ' keyType: PATH' +
                   ' keyName: "accessedBy" '+
                   ' actionClassification:' + ac +
-                  ' alertLevel: 5'
+                  ' alertLevel: 5){srn}}'
                   )
+        
+        logging.info('Mutation: {}'.format(mutationAccess))
         results = graphql_client.query(mutationAccess)
-    #check to see if everything is good before running
     
     mutation = ( 'mutation CRM_GEO {' +
                 'setChangeDetectionProperties('+
                 ' ResourceSrn: "' + object_srn + '" ' +
                 ' keyType: PATH' +
                 ' keyName: "accessedFrom" '+
-                ' alertLevel: 5'
+                ' alertLevel: 5){srn}}'
                 )
 
     graphql_client.query(mutation)
