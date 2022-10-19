@@ -8,7 +8,7 @@ def run(ctx):
     graphql_client = ctx.graphql_client()
     
     #all different action classifications CRM will look for on changes to permissions
-    action_class = [dataread, protectionread, create, datacreate, tag]
+    action_class = [DataRead, ProtectionRead, Create, DataCreate, Tag]
   
     logging.info('Setting CRM for: {}'.format(object_srn))
     
