@@ -19,7 +19,7 @@ def run(ctx):
                   ' keyType: PATH' +
                   ' keyName: "accessedBy" '+
                   ' actionClassification: "' + ac + '" ' +
-                  ' alertLevel: 5
+                  ' alertLevel: 5'
                   )
       results = graphql_client.query(mutationAccess)
     #check to see if everything is good before running
@@ -29,7 +29,7 @@ def run(ctx):
                 ' ResourceSrn: "' + object_srn + '" ' +
                 ' keyType: PATH' +
                 ' keyName: "accessedFrom" '+
-                ' alertLevel: 5
+                ' alertLevel: 5'
                 )
 
     graphql_client.query(mutation)
