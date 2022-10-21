@@ -22,7 +22,7 @@ def run(ctx):
                   ' alertLevel: 5){resourceSrn}}'
                   )
         
-        logging.info('Mutation: {}'.format(mutationAccess))
+        logging.info('AccessedByMutation: {}'.format(mutationAccess))
         graphql_client.query(mutationAccess)
     
     mutation = ( 'mutation CRM_GEO {' +
@@ -46,5 +46,5 @@ def run(ctx):
                     'value' +
                     '__typename}}'
                   )    
-    logging.info('Mutation: {}'.format(mutationTag))               
+    logging.info('TagMutation: {}'.format(mutationTag))               
     graphql_client.query(mutationTag)
