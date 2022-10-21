@@ -38,8 +38,8 @@ def run(ctx):
     mutationTag = ( 'mutation addTagsWithNoDuplicates {' +
                     'AddTag(' +
                         'value: {' + 
-                            'key: "CRM"' +  
-                            'value: "Enabled"' +
+                            'key: "CRM" '+  
+                            'value: "Enabled" '+
                             'tagsEntity: { add: "' + object_srn + '" } }) {' +
                     'srn' +
                     'key' +
