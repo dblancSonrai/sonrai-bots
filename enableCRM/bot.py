@@ -41,9 +41,9 @@ def run(ctx):
                             'key: "CRM" '+  
                             'value: "Enabled" '+
                             'tagsEntity: { add: "' + object_srn + '" } }) {' +
-                    'srn' +
-                    'key' +
-                    'value' +
+                    'srn ' +
+                    'key ' +
+                    'value ' +
                     '__typename}}'
                   )    
     logging.info('TagMutation: {}'.format(mutationTag))               
