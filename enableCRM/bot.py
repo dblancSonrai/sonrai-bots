@@ -34,3 +34,17 @@ def run(ctx):
                 )
 
     graphql_client.query(mutation)
+    
+    mutationTag = ( 'mutation addTagsWithNoDuplicates {' +
+                    'AddTag( +
+                        'value: {' + 
+                            'key: "CRM"' +  
+                            'value: "Enabled"' +
+                            'tagsEntity: { add: "' + object_srn + '" } }) {' +
+                    'srn' +
+                    'key' +
+                    'value' +
+                    '__typename}}'
+                  )    
+                   
+    graphql_client.query(mutationTag)
