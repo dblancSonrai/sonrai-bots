@@ -23,7 +23,7 @@ def run(ctx):
                   )
         
         logging.info('Mutation: {}'.format(mutationAccess))
-        results = graphql_client.query(mutationAccess)
+        graphql_client.query(mutationAccess)
     
     mutation = ( 'mutation CRM_GEO {' +
                 'setChangeDetectionProperties('+
@@ -46,5 +46,5 @@ def run(ctx):
                     'value' +
                     '__typename}}'
                   )    
-                   
+    logging.info('Mutation: {}'.format(mutationTag))               
     graphql_client.query(mutationTag)
