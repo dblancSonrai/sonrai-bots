@@ -14,7 +14,12 @@ fields:
     type: "select"
     multi: false
     select:
-      search: '{SavedQueries{items{name,srn}}}'
-      path: ["data", "SavedQueries", "items"]
+      search: '{Searches{items{name}}}'
+      path: ["data", "Searches", "items"]
       valueField: "name"
       labelFields: ["name", "srn"]
+
+  - name: "Search Name"
+    required: true
+    type: "text"
+    multi: false
