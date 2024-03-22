@@ -1,5 +1,5 @@
-mutation importance($number: String {
-  setImportance(srn: $number, importance: 0) {
+mutation importance($srn: ID {
+  setImportance(srn: $srn, importance: 0) {
     srn
     importance
   }
