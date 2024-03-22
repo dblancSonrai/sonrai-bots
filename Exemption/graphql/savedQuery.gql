@@ -1,6 +1,5 @@
-query savedQuery
-{
+query savedQuery($name: String){
   ExecuteSavedQuery {
-    Query(name: "")
+    Query(name: "$name")
   }
 }
