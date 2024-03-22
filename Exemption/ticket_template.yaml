@@ -18,8 +18,3 @@ fields:
       path: ["data", "Searches", "items"]
       valueField: "name"
       labelFields: ["name", "srn"]
-
-  - name: "Search Name"
-    required: true
-    type: "text"
-    multi: false
