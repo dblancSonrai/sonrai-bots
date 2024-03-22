@@ -1,1 +1,6 @@
-testing
+query savedQuery
+{
+  ExecuteSavedQuery {
+    Query(name: "")
+  }
+}
