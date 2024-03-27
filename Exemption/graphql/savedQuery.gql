@@ -1,4 +1,4 @@
-query savedQuery($name: String){
+query savedQuery($name: String!){
   ExecuteSavedQuery {
     Query(name: $name)
   }
