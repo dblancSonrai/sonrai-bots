@@ -1,4 +1,4 @@
-mutation importance($srn: ID {
+mutation importance($srn: ID!) {
   setImportance(srn: $srn, importance: 0) {
     srn
     importance
