@@ -18,7 +18,7 @@ def run(ctx):
     mutation_setImportance = gql['setImportance.gql']
     logging.info('Set search variables')
     logging.info('Attempting to get custom field')
-    for customField in ticket.get('customFields'):
+    for customField in ticket.get('cfFields'):
         logging.info('Attempting to grab search name')
         search_name = customField['value']
         logging.info('Formatting query name')
