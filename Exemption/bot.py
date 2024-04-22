@@ -21,7 +21,7 @@ def run(ctx):
     logging.info('Attempting to get custom field')
     for customField in ticket.get('cfFields'):
         logging.info('Attempting to grab search name')
-        search_name = customField['value']
+        search_name = customField[0]['value']
         logging.info('Formatting query name')
         search_name = ('{"name": "' + search_name + '" }')
         logging.info('Attempting to run query')
