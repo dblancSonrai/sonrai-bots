@@ -16,7 +16,8 @@ def run(ctx):
     get_resources = None
     query_resourcesToExempt = gql['savedQuery.gql']
     mutation_setImportance = gql['setImportance.gql']
-    logging.info('Set search variables')
+    logging.info('print ticket info')
+    logging.info(ticket.get('cfFields'))
     logging.info('Attempting to get custom field')
     for customField in ticket.get('cfFields'):
         logging.info('Attempting to grab search name')
