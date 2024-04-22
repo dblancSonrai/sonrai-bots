@@ -25,6 +25,7 @@ def run(ctx):
         search_name = ('{"name": "' + search_name + '" }')
         logging.info('Attempting to run query')
         get_resources = graphql_client.query(query_resourcesToExempt,search_name)
+        logging.info('Query successfully worked')
 
     for resource in get_resources['ExecuteSavedQuery']['Query']['Resources']['items']:
         srn = resource['srn']
