@@ -11,8 +11,10 @@ def run(ctx):
 
     # Get the ticket data from the context
     ticket = ctx.config.get('data').get('ticket')
-    logging.info('Got ticket data')
 
+    logging.info('Attempting to get ticket data')
+    logging.info(ctx.config.get('data'))
+    
     get_resources = None
     query_resourcesToExempt = gql['savedQuery.gql']
     mutation_setImportance = gql['setImportance.gql']
@@ -35,7 +37,6 @@ def run(ctx):
     for resource in get_resources['ExecuteSavedQuery']['Query']['Resources']['items']:
         srn = resource['srn']
         srn = ('{"srn": "' + srn + '" }')
-        print(srn)
         set_importance = graphql_client.query(mutation_setImportance,srn)
         endResource = set_importance['setImportance']['srn']
         logging.info('Exempted Resource: '+endResource)
