@@ -19,7 +19,7 @@ def run(ctx):
     mutation_setImportance = gql['setImportance.gql']
     query_ticket = gql['ticket.gql']
 
-    ticketSrn = ('{"srn": "' + ticketSrn + '" }')
+    ticketSrn = ('{"value": "' + ticketSrn + '" }')
     customField = graphql_client.query(query_ticket,ticketSrn)
     logging.info(customField)
     logging.info('Attempting to grab search name')
