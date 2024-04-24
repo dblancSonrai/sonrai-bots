@@ -24,7 +24,7 @@ def run(ctx):
     
     for customField in CF:
         logging.info('Attempting to grab search name')
-        search_name = customField['cfFields']['value']
+        search_name = customField['data']['listFindings']['items']['cfFields'][0]['value']
         logging.info('Formatting query name')
         search_name = ('{"name": "' + search_name + '" }')
         logging.info('Attempting to run query')
