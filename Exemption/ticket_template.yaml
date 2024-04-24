@@ -9,7 +9,7 @@ authorEmail: "info@sonraisecurity.com"
 
 # one or more fields must be specified
 fields:
-  - name: "Search"
+  - name: "Search (Must be an all resources type search)"
     required: true 
     type: "select"
     multi: false
