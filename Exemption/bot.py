@@ -19,7 +19,7 @@ def run(ctx):
     mutation_setImportance = gql['setImportance.gql']
     query_ticket = gql['ticket.gql']
 
-    ticketSrn = ('{"value": "' + ticketSrn + '" }')
+    #ticketSrn = ('{"value": "' + ticketSrn + '" }')
     ticketSrn = ('{"' + ticketSrn + '" }')
     customField = graphql_client.query(query_ticket,ticketSrn)
     logging.info(customField)
