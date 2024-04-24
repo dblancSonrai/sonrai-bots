@@ -2,7 +2,7 @@
 title: "Exempt Resources"
 
 # The next fields are optional:
-description: "This template allows you to select which search is used to identify resources to be exempted. The search used must be an all resources type search"
+description: "This template allows you to select which search is used to identify resources to be exempted."
 version: "0.0.1"
 authorName: "Sonrai Security"
 authorEmail: "info@sonraisecurity.com"
