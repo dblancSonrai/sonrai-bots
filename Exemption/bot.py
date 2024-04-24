@@ -21,7 +21,7 @@ def run(ctx):
 
     ticketSrn = ('{"srn": "' + ticketSrn + '" }')
     customField = graphql_client.query(query_ticket,ticketSrn)
-    
+    logging.info(customField)
     logging.info('Attempting to grab search name')
     search_name = customField['data']['ListFindings']['items'][0]['cfFields'][0]['value']
     logging.info('Formatting query name')
