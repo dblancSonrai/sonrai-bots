@@ -1,5 +1,5 @@
-query getTicket$srn: String!{
-  ListFindings(where: {srn:{op:EQ, value:"srn:rbc::PolicyFinding/31653661-6235-3666-3938-346539653563"}}){
+query getTicket($srn: String!){
+  ListFindings(where: {srn:{op:EQ, value:$srn}}){
     items{
       cfFields
     }
