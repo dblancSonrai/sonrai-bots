@@ -20,16 +20,15 @@ def run(ctx):
     query_ticket = gql['ticket.gql']
 
     ticketSrn = ('{"srn": "' + ticketSrn + '" }')
-    CF = graphql_client.query(query_ticket,ticketSrn)
+    customField = graphql_client.query(query_ticket,ticketSrn)
     
-    for customField in CF:
-        logging.info('Attempting to grab search name')
-        search_name = customField['data']['ListFindings']['items'][0]['cfFields'][0]['value']
-        logging.info('Formatting query name')
-        search_name = ('{"name": "' + search_name + '" }')
-        logging.info('Attempting to run query')
-        get_resources = graphql_client.query(query_resourcesToExempt,search_name)
-        logging.info('Query successfully worked')
+    logging.info('Attempting to grab search name')
+    search_name = customField['data']['ListFindings']['items'][0]['cfFields'][0]['value']
+    logging.info('Formatting query name')
+    search_name = ('{"name": "' + search_name + '" }')
+    logging.info('Attempting to run query')
+    get_resources = graphql_client.query(query_resourcesToExempt,search_name)
+    logging.info('Query successfully worked')
 
     for resource in get_resources['ExecuteSavedQuery']['Query']['Resources']['items']:
         srn = resource['srn']
