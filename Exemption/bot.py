@@ -14,7 +14,7 @@ def run(ctx):
     ticket = ctx.config
     
     logging.info('Attempting to get ticket data')
-    logging.info("please work {} darnit".format(ticket['data']['ticket']['srn'))
+    logging.info("please work {} darnit".format(ticket['data']['ticket']['srn']))
     
     get_resources = None
     query_resourcesToExempt = gql['savedQuery.gql']
