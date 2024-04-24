@@ -12,19 +12,12 @@ def run(ctx):
     # Get the ticket data from the context
     #ticket = ctx.config.get('data').get('ticket')
     ticket = ctx.config
-    
-    logging.info('Attempting to get ticket data')
-    logging.info("please work {} darnit".format(ticket['data']['ticket']['srn']))
+    ticket = ticket['data']['ticket']['srn']
     
     get_resources = None
     query_resourcesToExempt = gql['savedQuery.gql']
     mutation_setImportance = gql['setImportance.gql']
-    
-    logging.info('print ticket info')
-    
-    logging.info(ticket.get('cfFields'))
-    
-    logging.info('Attempting to get custom field')
+    query_ticket = gql['']
     
     for customField in ticket.get('cfFields'):
         logging.info('Attempting to grab search name')
