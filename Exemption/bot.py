@@ -12,16 +12,19 @@ def run(ctx):
     # Get the ticket data from the context
     #ticket = ctx.config.get('data').get('ticket')
     ticket = ctx.config
-    ticket = ticket['data']['ticket']['srn']
+    ticketSrn = ticket['data']['ticket']['srn']
     
     get_resources = None
     query_resourcesToExempt = gql['savedQuery.gql']
     mutation_setImportance = gql['setImportance.gql']
-    query_ticket = gql['']
+    query_ticket = gql['ticket.gql']
+
+    ticketSrn = ('{"srn": "' + ticketSrn + '" }')
+    CF = graphql_client.query(query_ticket,ticketSrn)
     
-    for customField in ticket.get('cfFields'):
+    for customField in CF:
         logging.info('Attempting to grab search name')
-        search_name = customField['value']
+        search_name = customField['cfFields']['value']
         logging.info('Formatting query name')
         search_name = ('{"name": "' + search_name + '" }')
         logging.info('Attempting to run query')
