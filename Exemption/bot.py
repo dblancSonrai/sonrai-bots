@@ -20,6 +20,7 @@ def run(ctx):
     query_ticket = gql['ticket.gql']
 
     ticketSrn = ('{"value": "' + ticketSrn + '" }')
+    ticketSrn = ('{"' + ticketSrn + '" }')
     customField = graphql_client.query(query_ticket,ticketSrn)
     logging.info(customField)
     logging.info('Attempting to grab search name')
