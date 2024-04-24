@@ -10,10 +10,11 @@ def run(ctx):
     graphql_client = ctx.graphql_client()
 
     # Get the ticket data from the context
-    ticket = ctx.config.get('data').get('ticket')
-
+    #ticket = ctx.config.get('data').get('ticket')
+    ticket = ctx.config
+    
     logging.info('Attempting to get ticket data')
-    logging.info("please work {} darnit".format(ctx.config))
+    logging.info("please work {} darnit".format(ticke['data']))
     
     get_resources = None
     query_resourcesToExempt = gql['savedQuery.gql']
