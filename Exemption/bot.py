@@ -32,7 +32,7 @@ def run(ctx):
     get_resources = graphql_client.query(query_resourcesToExempt,search_name)
     logging.info('Query successfully worked')
 
-    for resource in get_resources['ExecuteSavedQuery']['Query']['Resources']['items']:
+    for resource in get_resources['ExecuteSavedQuery']['Query']['Roles']['items']: #change rolls to resources
         srn = resource['srn']
         srn = ('{"srn": "' + srn + '" }')
         set_importance = graphql_client.query(mutation_setImportance,srn)
