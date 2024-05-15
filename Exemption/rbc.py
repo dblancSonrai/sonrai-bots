@@ -1,3 +1,5 @@
+#add getting the date, pulling out the month, check if its the 1st, create list if need be, append to the current list
+
 import logging
 import json
 from sonrai import gql_loader
