@@ -2,14 +2,14 @@
 title: "Exempt Resources"
 
 # The next fields are optional:
-description: "This template allows you to select which search is used to identify resources to be exempted"
+description: "This template allows you to select which search is used to identify resources to be exempted. The search must be an All Resources top card"
 version: "0.0.1"
 authorName: "Sonrai Security"
 authorEmail: "info@sonraisecurity.com"
 
 # one or more fields must be specified
 fields:
-  - name: "Search"
+  - name: "Search (All Resources top card)"
     required: true 
     type: "select"
     multi: false
