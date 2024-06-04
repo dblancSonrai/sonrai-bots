@@ -48,4 +48,4 @@ def run(ctx):
         endResource = set_importance['setImportance']['srn']
         logging.info('Exempted Resource: '+endResource)
 
-    gql_loader.snooze_ticket(ctx, hours=24)
+    gql_loader.snooze_ticket(ctx, days=7)
