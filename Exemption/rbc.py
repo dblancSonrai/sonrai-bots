@@ -25,6 +25,7 @@ def run(ctx):
     query_resourcesToExempt = gql['savedQuery.gql']
     mutation_setImportance = gql['setImportance.gql']
     query_ticket = gql['ticket.gql']
+    mutation_tag = gql['tag.gql']
 
     #Ticket look up to get custom fields
     customField = graphql_client.query(query_ticket,ticketSrn)
@@ -39,8 +40,11 @@ def run(ctx):
     #exempt the resources
     for resource in get_resources['ExecuteSavedQuery']['Query']['Resources']['items']: #change rolls to resources
         srn = resource['srn']
+        srn2 = '"'+srn+'"'
         srn = ('{"srn": "' + srn + '" }')
+        value ='"'+today+'"'
         set_importance = graphql_client.query(mutation_setImportance,srn)
+        add_tag = graphql_client.query(mutation_tag,srn2,value)
         endResource = set_importance['setImportance']['srn']
         logging.info('Exempted Resource: '+endResource)
 
