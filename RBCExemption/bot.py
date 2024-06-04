@@ -38,14 +38,13 @@ def run(ctx):
     get_resources = graphql_client.query(query_resourcesToExempt,search_name)
 
     #exempt the resources
-    for resource in get_resources['ExecuteSavedQuery']['Query']['Resources']['items']: #change rolls to resources
+        for resource in get_resources['ExecuteSavedQuery']['Query']['Resources']['items']:
         srn = resource['srn']
-        srn2 = '"'+srn+'"'
+        variables = ('{"value":"' + today + '","srn":"' + srn + '"}')
         srn = ('{"srn": "' + srn + '" }')
-        value ='"'+today+'"'
-        set_importance = graphql_client.query(mutation_setImportance,srn)
-        graphql_client.query(mutation_tag,srn2,value)
+        set_importance = graphql_client.query(mutation_setImportance, srn)
+        graphql_client.query(mutation_tag, variables)
         endResource = set_importance['setImportance']['srn']
-        logging.info('Exempted Resource: '+endResource)
+        logging.info('Exempted and Tagged Resource: ' + endResource)
 
     gql_loader.snooze_ticket(ctx, days=7)
