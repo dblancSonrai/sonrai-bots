@@ -44,7 +44,7 @@ def run(ctx):
         srn = ('{"srn": "' + srn + '" }')
         value ='"'+today+'"'
         set_importance = graphql_client.query(mutation_setImportance,srn)
-        add_tag = graphql_client.query(mutation_tag,srn2,value)
+        graphql_client.query(mutation_tag,srn2,value)
         endResource = set_importance['setImportance']['srn']
         logging.info('Exempted Resource: '+endResource)
 
