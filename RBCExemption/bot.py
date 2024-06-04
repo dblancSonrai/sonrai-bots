@@ -38,7 +38,7 @@ def run(ctx):
     get_resources = graphql_client.query(query_resourcesToExempt,search_name)
 
     #exempt the resources
-        for resource in get_resources['ExecuteSavedQuery']['Query']['Resources']['items']:
+    for resource in get_resources['ExecuteSavedQuery']['Query']['Resources']['items']:
         srn = resource['srn']
         variables = ('{"value":"' + today + '","srn":"' + srn + '"}')
         srn = ('{"srn": "' + srn + '" }')
