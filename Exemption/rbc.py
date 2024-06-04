@@ -3,6 +3,10 @@
 import logging
 import json
 from sonrai import gql_loader
+import datetime
+
+today = datetime.datetime.now()
+today = today.strftime("%B %Y")
 
 def run(ctx):
     # Load searches:
