@@ -1,0 +1,7 @@
+mutation tag($srn2: String!, $value: String!){
+  AddTag(value:{key:"Exemption", value:$value, tagsEntity:{add:[$srn2]}}){
+    srn
+    key
+    value
+  }
+}
