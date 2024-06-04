@@ -1,5 +1,5 @@
-mutation tag{
-  AddTag(value:{key:"Test2", value:"Blanchard", tagsEntity:{add:["srn:aws:sso::191454617305/User/SAML/derek.blanchard@sonraisecurity.com"]}}){
+mutation tag($srn: String!, $value: String!){
+  AddTag(value:{key:"Exemption", value:$value, tagsEntity:{add:[$srn]}}){
     srn
     key
     value
