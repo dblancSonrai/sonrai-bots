@@ -1,6 +1,10 @@
 import logging
 import json
 from sonrai import gql_loader
+import datetime
+
+today = datetime.datetime.now()
+today = today.strftime("%B %Y")
 
 def run(ctx):
     # Load searches:
@@ -19,6 +23,7 @@ def run(ctx):
     query_resourcesToExempt = gql['savedQuery.gql']
     mutation_setImportance = gql['setImportance.gql']
     query_ticket = gql['ticket.gql']
+    mutation_tag = gql['tag.gql']
 
     #Ticket look up to get custom fields
     customField = graphql_client.query(query_ticket,ticketSrn)
@@ -31,11 +36,13 @@ def run(ctx):
     get_resources = graphql_client.query(query_resourcesToExempt,search_name)
 
     #exempt the resources
-    for resource in get_resources['ExecuteSavedQuery']['Query']['Resources']['items']: #change rolls to resources
+    for resource in get_resources['ExecuteSavedQuery']['Query']['Resources']['items']:
         srn = resource['srn']
+        variables = ('{"value":"' + today + '","srn":"' + srn + '"}')
         srn = ('{"srn": "' + srn + '" }')
-        set_importance = graphql_client.query(mutation_setImportance,srn)
+        set_importance = graphql_client.query(mutation_setImportance, srn)
+        graphql_client.query(mutation_tag, variables)
         endResource = set_importance['setImportance']['srn']
-        logging.info('Exempted Resource: '+endResource)
+        logging.info('Exempted and Tagged Resource: ' + endResource)
 
-    gql_loader.snooze_ticket(ctx, hours=24)
+    gql_loader.snooze_ticket(ctx, hours=168)
