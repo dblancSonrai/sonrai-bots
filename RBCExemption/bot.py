@@ -28,22 +28,24 @@ def run(ctx):
     mutation_tag = gql['tag.gql']
 
     #Ticket look up to get custom fields
-    customField = graphql_client.query(query_ticket,ticketSrn)
+    #customField = graphql_client.query(query_ticket,ticketSrn)
 
     #Format search name for custom search query
-    search_name = customField['ListFindings']['items'][0]['cfFields'][0]['value']
+    #search_name = customField['ListFindings']['items'][0]['cfFields'][0]['value']
     search_name = ('{"name": "' + search_name + '" }')
 
     #Run custom search query to get resources to exempt
-    get_resources = graphql_client.query(query_resourcesToExempt,search_name)
+    #get_resources = graphql_client.query(query_resourcesToExempt,search_name)
+    logging.info('eric log test')
 
     #exempt the resources
     for resource in get_resources['ExecuteSavedQuery']['Query']['Resources']['items']:
+        logging.info('eric in the loop')
         srn = resource['srn']
         variables = ('{"value":"' + today + '","srn":"' + srn + '"}')
         srn = ('{"srn": "' + srn + '" }')
         set_importance = graphql_client.query(mutation_setImportance, srn)
-        graphql_client.query(mutation_tag, variables)
+        #graphql_client.query(mutation_tag, variables)
         endResource = set_importance['setImportance']['srn']
         logging.info('Exempted and Tagged Resource: ' + endResource)
 
