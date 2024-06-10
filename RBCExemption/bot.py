@@ -11,22 +11,22 @@ today = today.strftime("%B %Y")
 
 def run(ctx):
     # Load searches:
-    # gql = gql_loader.queries()
+    gql = gql_loader.queries()
 
     # # Create GraphQL client
-    # graphql_client = ctx.graphql_client()
+    graphql_client = ctx.graphql_client()
 
     # # Get the ticket data from the context
-    # ticket = ctx.config
-    # ticketSrn = ticket['data']['ticket']['srn']
-    # ticketSrn = ('{"srn": "' + ticketSrn + '" }')
+    ticket = ctx.config
+    ticketSrn = ticket['data']['ticket']['srn']
+    ticketSrn = ('{"srn": "' + ticketSrn + '" }')
 
     #Set query/mutation variables
-    # get_resources = None
-    # query_resourcesToExempt = gql['savedQuery.gql']
-    # mutation_setImportance = gql['setImportance.gql']
-    # query_ticket = gql['ticket.gql']
-    # mutation_tag = gql['tag.gql']
+    get_resources = None
+    query_resourcesToExempt = gql['savedQuery.gql']
+    mutation_setImportance = gql['setImportance.gql']
+    query_ticket = gql['ticket.gql']
+    mutation_tag = gql['tag.gql']
 
     #Ticket look up to get custom fields
     #customField = graphql_client.query(query_ticket,ticketSrn)
