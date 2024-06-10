@@ -4,28 +4,29 @@ import logging
 import json
 from sonrai import gql_loader
 import datetime
+import time
 
 today = datetime.datetime.now()
 today = today.strftime("%B %Y")
 
 def run(ctx):
     # Load searches:
-    gql = gql_loader.queries()
+    # gql = gql_loader.queries()
 
-    # Create GraphQL client
-    graphql_client = ctx.graphql_client()
+    # # Create GraphQL client
+    # graphql_client = ctx.graphql_client()
 
-    # Get the ticket data from the context
-    ticket = ctx.config
-    ticketSrn = ticket['data']['ticket']['srn']
-    ticketSrn = ('{"srn": "' + ticketSrn + '" }')
+    # # Get the ticket data from the context
+    # ticket = ctx.config
+    # ticketSrn = ticket['data']['ticket']['srn']
+    # ticketSrn = ('{"srn": "' + ticketSrn + '" }')
 
     #Set query/mutation variables
-    get_resources = None
-    query_resourcesToExempt = gql['savedQuery.gql']
-    mutation_setImportance = gql['setImportance.gql']
-    query_ticket = gql['ticket.gql']
-    mutation_tag = gql['tag.gql']
+    # get_resources = None
+    # query_resourcesToExempt = gql['savedQuery.gql']
+    # mutation_setImportance = gql['setImportance.gql']
+    # query_ticket = gql['ticket.gql']
+    # mutation_tag = gql['tag.gql']
 
     #Ticket look up to get custom fields
     #customField = graphql_client.query(query_ticket,ticketSrn)
@@ -37,10 +38,11 @@ def run(ctx):
     #Run custom search query to get resources to exempt
     #get_resources = graphql_client.query(query_resourcesToExempt,search_name)
     logging.info('eric log test')
+    time.sleep(265)
 
     #exempt the resources
-    for resource in get_resources['ExecuteSavedQuery']['Query']['Resources']['items']:
-        logging.info('eric in the loop')
+    # for resource in get_resources['ExecuteSavedQuery']['Query']['Resources']['items']:
+    #     logging.info('eric in the loop')
         # srn = resource['srn']
         # variables = ('{"value":"' + today + '","srn":"' + srn + '"}')
         # srn = ('{"srn": "' + srn + '" }')
