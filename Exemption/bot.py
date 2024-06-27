@@ -4,7 +4,7 @@ from sonrai import gql_loader
 import datetime
 
 today = datetime.datetime.now()
-today = today.strftime("%B %Y")
+today = today.strftime("%B %d %Y")
 
 def run(ctx):
     # Load searches:
