@@ -12,10 +12,13 @@ from azure.mgmt.authorization import AuthorizationManagementClient
 def run(ctx):
     #create client whose credentials we will use
     client = ctx.get_client()
+    logging.info('Client Created')
+    logging.info(client.credential)
 
     #get ticket date
     ticket = ctx.config
     data = (ticket['data']['ticket'])
+    logging.info('ticket data loaded')
 
     #pull out scope and assignment ID
     assignmentID = data['resourceSRN']
@@ -29,6 +32,7 @@ def run(ctx):
         #credential = DefaultAzureCredential(),
         subscription_id = assignmentID[4],
     )
+    logging.info('Authentication Done')
     try:
         #remove the role assignment
         response = client.role_assignments.delete(
