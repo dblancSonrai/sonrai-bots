@@ -6,5 +6,4 @@ operation: EXECUTE_PYTHON_SCRIPT
 authorName: Sonrai Security
 cloud: Azure
 authorEmail: info@sonraisecurity.com
-requiredPermissions: |-
-  Microsoft.Authorization/roleAssignments/Delete
+requiredPermissions: Microsoft.Authorization/roleAssignments/Delete
