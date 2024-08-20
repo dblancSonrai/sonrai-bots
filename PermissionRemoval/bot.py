@@ -27,6 +27,7 @@ def run(ctx):
     assignmentID = assignmentID[8]
 
     #Authenticate
+    #client = ctx.get_client().get(AuthorizationManagementClient,assignmentID[4])
     client = AuthorizationManagementClient(
         SonraiClient.credential,
         #credential = DefaultAzureCredential(),
@@ -45,4 +46,4 @@ def run(ctx):
     except Exception as error:
         logging.info('Permission Removal Bot Failed: ')
         logging.info(error)
-        gql_loader.add_ticket_comment(ctx, "this is a comment")
+        #gql_loader.add_ticket_comment(ctx, "this is a comment")
