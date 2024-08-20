@@ -34,10 +34,7 @@ def run(ctx):
     logging.info('Authentication Done')
     try:
         #remove the role assignment
-        response = client.role_assignments.delete(
-            scope = assignScope,
-            role_assignment_name = assignmentID,
-        )
+        response = client.role_assignments.delete(scope = assignScope,role_assignment_name = assignmentID)
         print(response)
         logging.info('Permission Removal Bot Done')
 
