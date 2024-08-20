@@ -12,7 +12,7 @@ def run(ctx):
     #create client whose credentials we will use
     SonraiClient = ctx.get_client()
     logging.info('Client Created')
-    logging.info(client.credential)
+    logging.info(SonraiClient.credential)
 
     #get ticket date
     ticket = ctx.config
