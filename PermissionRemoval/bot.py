@@ -28,9 +28,9 @@ def run(ctx):
 
     #Authenticate
     client = AuthorizationManagementClient(
-        #credential = SonraiClient.credential,
-        credential = DefaultAzureCredential(),
-        subscription_id = assignmentID[4],
+        SonraiClient.credential,
+        #credential = DefaultAzureCredential(),
+        assignmentID[4],
     )
     logging.info('Authentication Done')
     try:
