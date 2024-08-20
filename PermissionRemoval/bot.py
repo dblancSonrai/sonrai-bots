@@ -25,17 +25,17 @@ def run(ctx):
     assignScope = assignmentID[3]+"/"+assignmentID[4]
     assignmentID = assignmentID[8]
 
-    logging.info(SonraiClient.get(AuthorizationManagementClient, subscription_id=assignmentID[4]))
+    authClient = SonraiClient.get(AuthorizationManagementClient, subscription_id=assignmentID[4])
     
     #Authenticate
     #client = ctx.get_client().get(AuthorizationManagementClient,assignmentID[4])
     
-    client = AuthorizationManagementClient(SonraiClient.credential, assignmentID[4])
+    #client = AuthorizationManagementClient(SonraiClient.credential, assignmentID[4])
     
     logging.info('Authentication Done')
     try:
         #remove the role assignment
-        response = client.role_assignments.delete(scope = assignScope,role_assignment_name = assignmentID)
+        response = authClient.role_assignments.delete(scope = assignScope,role_assignment_name = assignmentID)
         print(response)
         logging.info('Permission Removal Bot Done')
 
