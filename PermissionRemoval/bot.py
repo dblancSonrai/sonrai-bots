@@ -26,7 +26,7 @@ def run(ctx):
     #client = ctx.get_client().get(AuthorizationManagementClient, subscription_id=assignmentID[4])
     #logging.info(client.credentials)
 
-    auth_client = AuthorizationManagementClient(credential = DefaultAzureCredential(),subscription_id = assignmentID[4])
+    auth_client = AuthorizationManagementClient(DefaultAzureCredential(), assignmentID[4])
     
     #auth_client = AuthorizationManagementClient(client.credential, assignmentID[4])
     
