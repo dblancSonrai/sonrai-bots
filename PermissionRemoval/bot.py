@@ -43,5 +43,6 @@ def run(ctx):
         logging.info('Permission Removal Bot Done')
 
     except Exception as error:
-        logging.info('Permission Removal Bot Failed: '+error)
+        logging.info('Permission Removal Bot Failed: ')
+        logging.info(error)
         gql_loader.add_ticket_comment(ctx, "this is a comment")
