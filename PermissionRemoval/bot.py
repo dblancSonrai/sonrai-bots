@@ -25,11 +25,11 @@ def run(ctx):
     assignScope = assignmentID[3]+"/"+assignmentID[4]
     assignmentID = assignmentID[8]
 
-    logging.info(SonraiClient.get(AuthorizationManagementClient, assignmentID[4]))
+    logging.info(SonraiClient.get(AuthorizationManagementClient, subscription_id=assignmentID[4]))
     
     #Authenticate
     #client = ctx.get_client().get(AuthorizationManagementClient,assignmentID[4])
-    #credential = DefaultAzureCredential(),
+    
     client = AuthorizationManagementClient(SonraiClient.credential, assignmentID[4])
     
     logging.info('Authentication Done')
