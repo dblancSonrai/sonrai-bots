@@ -13,8 +13,7 @@ def run(ctx):
     SonraiClient = ctx.get_client()
     logging.info('Client Created')
     logging.info(SonraiClient.credential)
-    logging.info(SonraiClient.get(AuthorizationManagementClient))
-
+    
     #get ticket date
     ticket = ctx.config
     data = (ticket['data']['ticket'])
@@ -26,6 +25,8 @@ def run(ctx):
     assignScope = assignmentID[3]+"/"+assignmentID[4]
     assignmentID = assignmentID[8]
 
+    logging.info(SonraiClient.get(AuthorizationManagementClient, assignmentID[4]))
+    
     #Authenticate
     #client = ctx.get_client().get(AuthorizationManagementClient,assignmentID[4])
     #credential = DefaultAzureCredential(),
