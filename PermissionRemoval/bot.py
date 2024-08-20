@@ -1,6 +1,6 @@
 import logging
 import os
-#from azure.identity import DefaultAzureCredential
+from azure.identity import DefaultAzureCredential
 from azure.mgmt.authorization import AuthorizationManagementClient
 
 def run(ctx):
@@ -25,9 +25,11 @@ def run(ctx):
     #Authenticate
     #client = ctx.get_client().get(AuthorizationManagementClient, subscription_id=assignmentID[4])
     #logging.info(client.credentials)
-    #authClient = AuthorizationManagementClient(client.credential, assignmentID[4])
+
+    auth_client = AuthorizationManagementClient(credential = DefaultAzureCredential(),subscription_id = assignmentID[4])
     
-    auth_client = AuthorizationManagementClient(client.credential, assignmentID[4])
+    #auth_client = AuthorizationManagementClient(client.credential, assignmentID[4])
+    
     
     logging.info('Auth Client Created')
     
