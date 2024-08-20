@@ -13,7 +13,7 @@ def run(ctx):
     SonraiClient = ctx.get_client()
     logging.info('Client Created')
     logging.info(SonraiClient.credential)
-    logging.info(SonraiClient.get(client_class))
+    logging.info(SonraiClient.get(azure.mgmt.authorization.AuthorizationManagementClient))
 
     #get ticket date
     ticket = ctx.config
