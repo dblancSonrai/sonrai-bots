@@ -5,7 +5,7 @@ from azure.mgmt.authorization import AuthorizationManagementClient
 
 def run(ctx):
     #create client whose credentials we will use
-    #SonraiClient = ctx.get_client()
+    client = ctx.get_client()
     logging.info('Client Created')
     #logging.info(SonraiClient.credential)
     
@@ -23,16 +23,17 @@ def run(ctx):
     #authClient = SonraiClient.get(AuthorizationManagementClient, subscription_id=assignmentID[4])
     
     #Authenticate
-    client = ctx.get_client().get(AuthorizationManagementClient, subscription_id=assignmentID[4])
-    logging.info(client.credentials)
+    #client = ctx.get_client().get(AuthorizationManagementClient, subscription_id=assignmentID[4])
+    #logging.info(client.credentials)
     #authClient = AuthorizationManagementClient(client.credential, assignmentID[4])
     
-    #client = AuthorizationManagementClient(SonraiClient.credential, assignmentID[4])
+    auth_client = AuthorizationManagementClient(client.credential, assignmentID[4])
     
-    logging.info('Authentication Done')
+    logging.info('Auth Client Created')
+    
     try:
         #remove the role assignment
-        response = client.role_assignments.delete(scope = assignScope,role_assignment_name = assignmentID)
+        response = auth_client.role_assignments.delete(scope = assignScope,role_assignment_name = assignmentID)
         print(response)
         logging.info('Permission Removal Bot Done')
 
