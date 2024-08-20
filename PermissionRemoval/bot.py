@@ -10,7 +10,7 @@ from azure.mgmt.authorization import AuthorizationManagementClient
 
 def run(ctx):
     #create client whose credentials we will use
-    client = ctx.get_client()
+    SonraiClient = ctx.get_client()
     logging.info('Client Created')
     logging.info(client.credential)
 
@@ -27,8 +27,8 @@ def run(ctx):
 
     #Authenticate
     client = AuthorizationManagementClient(
-        #credential = client.credential,
-        credential = DefaultAzureCredential(),
+        credential = SonraiClient.credential,
+        #credential = DefaultAzureCredential(),
         subscription_id = assignmentID[4],
     )
     logging.info('Authentication Done')
