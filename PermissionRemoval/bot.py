@@ -1,6 +1,6 @@
 import logging
 import os
-from azure.identity import DefaultAzureCredential
+#from azure.identity import DefaultAzureCredential
 from azure.mgmt.authorization import AuthorizationManagementClient
 
 #os.environ['AZURE_CLIENT_ID'] = "859e2fc7-9cbe-4d6d-bb6f-7a9e0b3ac68c"
@@ -28,11 +28,9 @@ def run(ctx):
 
     #Authenticate
     #client = ctx.get_client().get(AuthorizationManagementClient,assignmentID[4])
-    client = AuthorizationManagementClient(
-        SonraiClient.credential,
-        #credential = DefaultAzureCredential(),
-        assignmentID[4],
-    )
+    #credential = DefaultAzureCredential(),
+    client = AuthorizationManagementClient(SonraiClient.credential, assignmentID[4])
+    
     logging.info('Authentication Done')
     try:
         #remove the role assignment
