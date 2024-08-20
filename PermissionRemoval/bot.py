@@ -27,8 +27,8 @@ def run(ctx):
 
     #Authenticate
     client = AuthorizationManagementClient(
-        credential = client.credential,
-        #credential = DefaultAzureCredential(),
+        #credential = client.credential,
+        credential = DefaultAzureCredential(),
         subscription_id = assignmentID[4],
     )
     logging.info('Authentication Done')
