@@ -24,7 +24,7 @@ def run(ctx):
     
     #Authenticate
     client = ctx.get_client().get(AuthorizationManagementClient, subscription_id=assignmentID[4])
-    logging.info(client.credential)
+    logging.info(client.credentials)
     #authClient = AuthorizationManagementClient(client.credential, assignmentID[4])
     
     #client = AuthorizationManagementClient(SonraiClient.credential, assignmentID[4])
