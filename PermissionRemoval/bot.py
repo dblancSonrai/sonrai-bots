@@ -1,11 +1,16 @@
 import logging
 import os
-#from sonrai import gql_loader
+from sonrai import gql_loader
 from azure.identity import DefaultAzureCredential
 from azure.mgmt.authorization import AuthorizationManagementClient
 
 def run(ctx):
     #create client whose credentials we will use
+    gql = gql_loader.add_ticket_comment()
+
+    # Create GraphQL client
+    graphql_client = ctx.graphql_client()
+    
     client = ctx.get_client()
     logging.info('Client Created')
     #logging.info(SonraiClient.credential)
@@ -41,4 +46,4 @@ def run(ctx):
     except Exception as error:
         logging.info('Permission Removal Bot Failed: ')
         logging.info(error)
-        gql_loader.add_ticket_comment(ctx, "this is a comment")
+        gql(ctx, "this is a comment")
