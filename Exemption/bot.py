@@ -1,6 +1,6 @@
 import logging
 import json
-from sonrai import gql_loader
+#from sonrai import gql_loader
 import datetime
 
 today = datetime.datetime.now()
