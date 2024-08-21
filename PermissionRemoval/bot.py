@@ -1,6 +1,6 @@
 import logging
 import os
-from sonrai import gql_loader
+#from sonrai import gql_loader
 from azure.identity import DefaultAzureCredential
 from azure.mgmt.authorization import AuthorizationManagementClient
 
