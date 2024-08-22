@@ -1,6 +1,6 @@
 import logging
 import os
-from sonrai import gql_loader
+#from sonrai import gql_loader
 from azure.identity import DefaultAzureCredential
 from azure.mgmt.authorization import AuthorizationManagementClient
 
@@ -32,8 +32,8 @@ def run(ctx):
     #client = ctx.get_client().get(AuthorizationManagementClient, subscription_id=assignmentID[4])
     #logging.info(client.credentials)
     
-    auth_client = AuthorizationManagementClient(DefaultAzureCredential(), assignmentID[4])
-    #auth_client = AuthorizationManagementClient(client.credential, assignmentID[4])
+    #auth_client = AuthorizationManagementClient(DefaultAzureCredential(), assignmentID[4])
+    auth_client = AuthorizationManagementClient(client.credential, assignmentID[4])
     
     logging.info('Auth Client Created')
     
@@ -46,4 +46,4 @@ def run(ctx):
     except Exception as error:
         logging.info('Permission Removal Bot Failed: ')
         logging.info(error)
-        gql(ctx, "this is a comment")
+        #gql(ctx, "this is a comment")
