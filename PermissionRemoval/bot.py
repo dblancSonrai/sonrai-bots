@@ -5,11 +5,6 @@ from azure.identity import DefaultAzureCredential
 from azure.mgmt.authorization import AuthorizationManagementClient
 
 def run(ctx):
-    #create client whose credentials we will use
-    #gql = gql_loader.add_ticket_comment()
-
-    # Create GraphQL client
-    #graphql_client = ctx.graphql_client()
     
     client = ctx.get_client()
     logging.info('Client Created')
@@ -26,13 +21,6 @@ def run(ctx):
     assignScope = assignmentID[3]+"/"+assignmentID[4]
     assignmentID = assignmentID[8]
 
-    #authClient = SonraiClient.get(AuthorizationManagementClient, subscription_id=assignmentID[4])
-    
-    #Authenticate
-    #client = ctx.get_client().get(AuthorizationManagementClient, subscription_id=assignmentID[4])
-    #logging.info(client.credentials)
-    
-    #auth_client = AuthorizationManagementClient(DefaultAzureCredential(), assignmentID[4])
     auth_client = AuthorizationManagementClient(client.credential, assignmentID[4])
     
     logging.info('Auth Client Created')
